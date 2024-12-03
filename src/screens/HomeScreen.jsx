@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, SafeAreaView } from 'react-native';
+import { Button, SafeAreaView, StyleSheet, View } from 'react-native';
 import MainLayout from '../layouts/MainLayout';
 import DoList from '../components/ToDoList';
 import DoForm from '../components/ToDoForm';
@@ -17,13 +17,11 @@ function HomeScreen({ navigation }) {
 
   return (
     <MainLayout>
-      {/* 任务列表和任务表单 */}
       <SafeAreaView>
         <DoList tasks={tasks} />
         <DoForm addTask={addTask} />
       </SafeAreaView>
-
-      {/* 导航按钮 */}
+      <View style={styles.spacer} />
       <Button
         title="Go to About"
         onPress={() => navigation.navigate('About')}
@@ -31,5 +29,11 @@ function HomeScreen({ navigation }) {
     </MainLayout>
   );
 }
+
+const styles = StyleSheet.create({
+  spacer: {
+    height: 20,
+  },
+});
 
 export default HomeScreen;

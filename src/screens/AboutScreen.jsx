@@ -1,11 +1,13 @@
 import React from 'react';
-import { Button } from 'react-native';
-import MainLayout from '../layouts/MainLayout';  // 确保路径正确
+import { Button, Text, StyleSheet, View } from 'react-native';
+import MainLayout from '../layouts/MainLayout'; 
+
 
 function AboutScreen({ navigation }) {
     return (
         <MainLayout>
-            {/* 你可以在这里添加其他内容 */}
+            <Text>This is a to-do list APP!</Text>
+            <View style={styles.spacer} />
             <Button
                 title="Go to Home"
                 onPress={() => navigation.navigate('Home')}
@@ -13,5 +15,11 @@ function AboutScreen({ navigation }) {
         </MainLayout>
     );
 }
+
+const styles = StyleSheet.create({
+  spacer: {
+    height: 80,
+  },
+});
 
 export default AboutScreen;
